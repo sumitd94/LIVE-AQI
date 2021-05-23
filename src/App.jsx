@@ -4,6 +4,7 @@ import subscribeToUpdates from './utils/websocket-request';
 import classNames from './App.module.css';
 
 import AQITable from './components/AQITable/AQITable';
+import AQICategories from './components/AQICategories/AQICategories';
 import CityChart from './components/AQIChart/CityChart';
 import ComparisonChart from './components/AQIChart/ComparisonChart';
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className={classNames.App}>
       <h2>LIVE Air Quality Index(AQI)</h2>
+      <AQICategories />
       <div className={classNames.AQIContainer}>
         <AQITable />
         <CityChart

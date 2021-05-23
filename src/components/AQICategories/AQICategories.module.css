@@ -1,0 +1,19 @@
+.categoriesContainer {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.categoryDetails {
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.categoryColor {
+  padding: .5rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin: 0 .5rem;
+}
