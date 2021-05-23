@@ -5,7 +5,7 @@ const client = new W3CWebSocket(SOCKET_URL);
 
 const subscribeToUpdates = (dispatch) => {
   client.onopen = () => console.log('WebSocket Client Connected');
-  client.onmessage = (message) => console.log(JSON.parse(message.data));
+  client.onmessage = (message) => dispatch({ type: 'UPDATE_AQI', AQI: JSON.parse(message.data) });
 };
 
 export default subscribeToUpdates;

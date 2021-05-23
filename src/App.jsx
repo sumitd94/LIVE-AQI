@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import subscribeToUpdates from './utils/websocket-request';
-import './App.css';
+import classNames from './App.module.css';
+
+import AQITable from './components/AQITable';
 
 function App() {
   const dispatch = useDispatch();
@@ -10,8 +12,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      LIVE AQI
+    <div className={classNames.App}>
+      <h2>LIVE AQI</h2>
+      <div className={classNames.AQIContainer}>
+        <AQITable />
+      </div>
     </div>
   );
 }
