@@ -4,14 +4,12 @@
 
 .AQIContainer {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 50% 60%;
   max-width: 1024px;
   grid-column-gap: 1.5rem;
   -webkit-column-gap: 1.5rem;
   column-gap: 1.5rem;
-  -webkit-align-items: center;
-  align-items: center;
   padding: 2rem;
-  margin: 6rem auto;
+  margin: 3rem auto;
   height: 60vh;
 }

@@ -5,7 +5,7 @@ import classNames from './AQITable.module.css';
 import AQIRow from './AQIRow';
 
 const renderRows = (AQI, cityNames) => cityNames.map((city) => (
-  <AQIRow key={city} city={city} qualityIndex={AQI[city]} />
+  <AQIRow key={city} city={city} qualityIndex={AQI[city].aqi} timestamp={AQI[city].timestamp} />
 ));
 
 const AQITable = () => {
@@ -19,6 +19,7 @@ const AQITable = () => {
           <tr>
             <th>City</th>
             <th>Current AQI</th>
+            <th>Last updated</th>
           </tr>
         </thead>
         <tbody>
