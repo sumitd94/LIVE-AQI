@@ -1,3 +1,2 @@
-const SOCKET_URL = 'ws://city-ws.herokuapp.com';
-
-export default SOCKET_URL;
+export const SOCKET_URL = 'ws://city-ws.herokuapp.com';
+export const SELECT_CITY = 'SELECT_CITY';

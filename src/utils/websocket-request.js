@@ -1,5 +1,5 @@
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
-import SOCKET_URL from '../AppConstants';
+import { SOCKET_URL } from '../AppConstants';
 
 const client = new W3CWebSocket(SOCKET_URL);
 
