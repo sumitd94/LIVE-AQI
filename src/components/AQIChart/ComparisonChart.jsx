@@ -1,39 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Line } from 'react-chartjs-2';
-import classNames from './CityChart.module.css';
+import { Bar } from 'react-chartjs-2';
+import classNames from './ComparisonChart.module.css';
 
-const getDataset = (AQI, city, timestamp) => {
-  const dataLabels = [timestamp];
-  const AQIData = [AQI];
+const getDataset = (AQI) => {
+  const citNames = Object.keys(AQI);
+  const AQIData = [];
+
+  citNames.map((city) => (AQIData.push(AQI[city].aqi)));
+
   return {
-    labels: dataLabels,
+    labels: citNames,
     datasets: [
       {
-        label: `${city} AQI`,
-        fill: true,
+        label: 'AQI',
         data: AQIData,
         borderColor: ['rgba(42,187,155,0.9)'],
         pointBorderColor: ['rgba(42,187,155,0.9)'],
         borderWidth: 4,
+        backgroundColor: ['orange'],
       },
     ],
   };
 };
 
-const CityChart = ({ AQI, city, timestamp }) => {
+const ComparisonChart = ({ AQI }) => {
   const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    const chart = () => setChartData(getDataset(AQI, city, timestamp));
+    const chart = () => setChartData(getDataset(AQI));
     chart();
   }, [AQI]);
 
   return (
     <div className={classNames.cityData}>
-      <Line
+      <Bar
         width={500}
-        height={200}
+        height={300}
         data={chartData}
         options={{
           responsive: true,
@@ -42,18 +45,15 @@ const CityChart = ({ AQI, city, timestamp }) => {
           scales: {
             yAxes: [
               {
-                ticks: {
-                  autoSkip: true,
-                },
                 gridLines: {
-                  display: true,
+                  display: false,
                 },
               },
             ],
             xAxes: [
               {
                 gridLines: {
-                  display: true,
+                  display: false,
                 },
               },
             ],
@@ -64,16 +64,12 @@ const CityChart = ({ AQI, city, timestamp }) => {
   );
 };
 
-CityChart.propTypes = {
+ComparisonChart.propTypes = {
   AQI: PropTypes.number,
-  city: PropTypes.string,
-  timestamp: PropTypes.number,
 };
 
-CityChart.defaultProps = {
+ComparisonChart.defaultProps = {
   AQI: 0,
-  city: '',
-  timestamp: 0,
 };
 
-export default CityChart;
+export default ComparisonChart;

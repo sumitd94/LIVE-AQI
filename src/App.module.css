@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .AQIContainer {
@@ -11,5 +13,8 @@
   column-gap: 1.5rem;
   padding: 2rem;
   margin: 3rem auto;
-  height: 60vh;
+}
+
+.chartBarContainer {
+  padding: 1rem 3rem;
 }

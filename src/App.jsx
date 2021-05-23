@@ -5,6 +5,7 @@ import classNames from './App.module.css';
 
 import AQITable from './components/AQITable/AQITable';
 import CityChart from './components/AQIChart/CityChart';
+import ComparisonChart from './components/AQIChart/ComparisonChart';
 
 function App() {
   const { selectedCity } = useSelector((state) => state.City);
@@ -26,6 +27,9 @@ function App() {
           AQI={AQI[selectedCity]?.aqi}
           timestamp={AQI[selectedCity]?.timestamp}
         />
+      </div>
+      <div className={classNames.chartBarContainer}>
+        <ComparisonChart AQI={AQI} />
       </div>
     </div>
   );
