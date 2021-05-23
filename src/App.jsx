@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className={classNames.App}>
-      <h2>LIVE AQI</h2>
+      <h2>LIVE Air Quality Index(AQI)</h2>
       <div className={classNames.AQIContainer}>
         <AQITable />
         <CityChart

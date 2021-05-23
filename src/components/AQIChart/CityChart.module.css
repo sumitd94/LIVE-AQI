@@ -13,6 +13,7 @@
   margin: 0;
   margin-bottom: 1rem;
   text-align: left;
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {

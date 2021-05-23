@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.App h2 {
+  color: white;
+}
+
 .AQIContainer {
   display: grid;
   grid-template-columns: 50% 60%;
