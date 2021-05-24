@@ -10,15 +10,21 @@
 
 .AQIContainer {
   display: grid;
-  grid-template-columns: 50% 60%;
+  grid-template-columns: 50% 50%;
   max-width: 1024px;
   grid-column-gap: 1.5rem;
   -webkit-column-gap: 1.5rem;
   column-gap: 3rem;
-  padding: 2rem;
+  padding: 1.5rem;
   margin: 3rem auto;
 }
 
 .chartBarContainer {
   padding: 1rem 3rem;
+}
+
+@media (max-width: 720px) {
+  .AQIContainer {
+    grid-template-columns: 1fr;
+  }
 }

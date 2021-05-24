@@ -2,12 +2,13 @@
   color: white;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .categoryDetails {
   display: flex;
   align-items: center;
-  padding: 0 .5rem;
+  padding: .5rem;
 }
 
 .categoryColor {
@@ -16,4 +17,11 @@
   width: 1rem;
   border-radius: 50%;
   margin: 0 .5rem;
+}
+
+@media (max-width: 420px) {
+  .categoriesContainer {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
 }

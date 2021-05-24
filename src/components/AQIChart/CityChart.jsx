@@ -43,7 +43,7 @@ const CityChart = ({ AQI, city, timestamp }) => (
         </>
 
       ) : (
-        <span>Click on a city to view the details on graph</span>
+        <span>Click on a city to view the details</span>
       )}
     </h2>
     <div className={classNames.cityData}>
