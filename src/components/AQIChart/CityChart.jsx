@@ -33,8 +33,8 @@ const CityChart = ({ AQI, city, timestamp }) => (
       {AQI > 0 ? (
         <>
           {city}
+          :
           {' '}
-          -
           {AQI.toFixed(2)}
           {' '}
           <span style={{ color: AQIColors(AQI) }}>
