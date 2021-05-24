@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import classNames from './ComparisonChart.module.css';
@@ -24,45 +24,36 @@ const getDataset = (AQI) => {
   };
 };
 
-const ComparisonChart = ({ AQI }) => {
-  const [chartData, setChartData] = useState({});
-
-  useEffect(() => {
-    const chart = () => setChartData(getDataset(AQI));
-    chart();
-  }, [AQI]);
-
-  return (
-    <div className={classNames.cityData}>
-      <Bar
-        width={500}
-        height={300}
-        data={chartData}
-        options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          title: { text: 'AQI Monitoring', display: true },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false,
-                },
+const ComparisonChart = ({ AQI }) => (
+  <div className={classNames.cityData}>
+    <Bar
+      width={500}
+      height={300}
+      data={getDataset(AQI)}
+      options={{
+        responsive: true,
+        maintainAspectRatio: false,
+        title: { text: 'AQI Monitoring', display: true },
+        scales: {
+          yAxes: [
+            {
+              gridLines: {
+                display: false,
               },
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false,
-                },
+            },
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
               },
-            ],
-          },
-        }}
-      />
-    </div>
-  );
-};
+            },
+          ],
+        },
+      }}
+    />
+  </div>
+);
 
 ComparisonChart.propTypes = {
   AQI: PropTypes.number,
