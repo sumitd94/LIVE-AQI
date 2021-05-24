@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Air Quality Index (AQI) Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An air quality index (AQI) is used by government agencies[1] to communicate to the public how polluted the air currently is or how polluted it is forecast to become. You can read more about it in detail [here](https://en.wikipedia.org/wiki/Air_quality_index).
 
-## Available Scripts
+# About the project
 
-In the project directory, you can run:
+This project is a Single Page Application (SPA) that shows the live tracking of AQI of different cities.
 
-### `yarn start`
+The Application is hosted on [Netlify](https://www.netlify.com) and is served on - https://live-aqi-tracker.netlify.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [React](https://reactjs.org)
+- [Redux](https://redux.js.org/) - For state management
+- [React-chartjs-2](https://reactchartjs.github.io/react-chartjs-2/#/) - graphing library to display AQI graphically
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the Project
+```shell
+$ git clone https://github.com/sumitd94/LIVE-AQI.git
+$ cd LIVE-AQI
+$ yarn
+$ yarn start
+```
 
-### `yarn build`
+Here, the project uses [yarn](https://yarnpkg.com/) as the package manager. If you are using [npm](https://www.npmjs.com/) as the package manager, then follow these steps to run the project locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+$ git clone https://github.com/sumitd94/LIVE-AQI.git
+$ cd LIVE-AQI
+$ npm i
+$ npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+When you run the command `yarn start` or `npm start`, this will start your local servers at `http://localhost:3000` where you can view the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This is how the Home Page looks like. Clicking on each `City` will show the AQI in the `line chart` (as shown in the right hand side of the table)
 
-### `yarn eject`
+![image](https://user-images.githubusercontent.com/29303618/119304416-d62e5e00-bc84-11eb-92bd-7d4eb9a05c33.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There is also a city wise comparison Bar Chart towards the bottom of the screen which gets updated real-time
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/29303618/119304575-1097fb00-bc85-11eb-838d-7374c74a4cf0.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> Its also mobile responsive 📱
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Time Taken
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+It took me 1 day to build this entire thing. In this 1 day I did the following things
 
-### Code Splitting
+- Read about Web Sockets. (I was not very much experienced with Web Sockets, So I had to read about it before I could use it)
+- Planned on how the component sructure should look like and how the redux store should look like.
+- Coding part
+- Documenting the README
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+During this project, the main learning for me was implementation of web sockets at client level and showing the data real time 🎉🎉🎉
